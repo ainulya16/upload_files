@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  //- h1= title
+  //- p Welcome to #{title}
+  .notification
+    .level
+      .level-item
+        form.field.has-addons(method='post', enctype='multipart/form-data')
+          .control
+            input.input(type='file', name='imageupload')
+          .control
+            input.button.is-primary(type='submit', name='uploadimage', value='Upload')
+  .container
+    .panel
+      p.panel-heading.has-background-primary.has-text-white
+        | Files 
+      if files.length==0
+        a.panel-block
+          | Empty
+
+      each val, index in files
+        a.panel-block(href=val)
+          span.panel-icon
+            i.fas.fa-book
+          |     #{val}
+
+  
+    //- .level
+    //-   .columns.is-mobile
+    //- each val, index in files
+    //-     .column
+    //-       a.button.is-primary(href=val) #{val}
+          
+    //- .level
+    //-   .level-item
+
+
+    
+
+    
+
+
